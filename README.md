@@ -49,6 +49,6 @@ Then, copy and paste all the contents of `fluent-bit/zeek/` to `/etc/fluent-bit/
 
 ## Grafana
 
-By Importing the dashboard in the `grafana` folder, and connecting clickhouse to grafana, you can make dashboards that look like this.
+By Importing the dashboard in the `grafana` folder, and connecting clickhouse to grafana, you can make dashboards that look like this. For the map to work, use follow this [guide](https://clickhouse.com/blog/geolocating-ips-in-clickhouse-and-grafana)
 
 ![Dashboard 1 Image](./assets/dashboard-1.png)
