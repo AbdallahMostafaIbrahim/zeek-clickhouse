@@ -45,7 +45,7 @@ Append this to `/etc/fluent-bit/parser.conf`
     Time_Format %s.%L
 ```
 
-Then, copy and paste all the contents of `fluent-bit/zeek/` to `/etc/fluent-bit/zeek`. Make sure the path to the zeek logs is correct and the server config for clickhouse is setup correctly.
+Then, copy and paste all the contents of `fluent-bit/zeek/` to `/etc/fluent-bit/zeek`. Make sure the path to the zeek logs is correct and the server config for clickhouse is setup correctly and the lua script as well.
 
 ## Grafana
 
