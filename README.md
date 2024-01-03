@@ -19,6 +19,24 @@ Go to `/opt/zeek/share/zeek/site/local.zeek` and add line
 @load policy/tuning/json-logs.zeek
 ```
 ## Fluent Bit Configuration
-Copy and paste the content of `fluent-bit` folder to `/etc/fluent-bit` and restart the service. Make sure the path to the logs is correct and the clickhouse server configuration is setup correctly in the files, as well as the `script.lua`.
+Remove all the config after the [SERVICE] part and append this this to `/etc/fluent-bit/fluent-bit.conf`
+```conf
+@INCLUDE zeek/conn.conf
+@INCLUDE zeek/ssh.conf
+@INCLUDE zeek/dns.conf
+@INCLUDE zeek/http.conf
+```
+Append this to `/etc/fluent-bit/parser.conf`
+```conf
+[PARSER]
+    Name        zeek_json
+    Format      json
+    Time_Key    ts
+    Time_Format %s.%L 
+```
+
+Then, copy and paste all the contents of `fluent-bit/zeek/` to `/etc/fluent-bit/zeek`. Make sure the path to the zeek logs is correct and the server config for clickhouse is setup correctly.
+
+
 
 
